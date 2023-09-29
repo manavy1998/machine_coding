@@ -37,8 +37,35 @@ public class Board {
         return;
     }
     
-    public void getSize(){
+    public int getSize(){
         return this.matrix.length;
+    }
+
+    
+
+    private void setSymbol(Symbols symbol, int row, int col){
+        this.matrix[row][col] = symbol;
+    }
+
+    public boolean setMove(Symbols symbol, int row, int col){
+        
+        if(!Validate.validMove(this.matrix, row, col)){
+            return false;
+        }
+        
+        setSymbol(symbol, row, col);
+
+        return true;
+    }
+
+    public boolean checkWin(Symbols symbol, int row, int col){
+
+        if (Validate.matchRow(this.matrix, symbol, row)){return true;}
+        else if (Validate.matchCol(this.matrix, symbol, col)){return true;}
+        else if (Validate.matchDiag(this.matrix, symbol)){return true;}
+        else if (Validate.matchDiagRev(this.matrix, symbol)){return true;}
+
+        return false;
     }
     
 }
