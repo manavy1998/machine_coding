@@ -1,4 +1,4 @@
-package myBoard;
+
 
 public class Board {
     Symbols matrix [][];
@@ -35,6 +35,10 @@ public class Board {
             System.out.println("");
         }
         return;
+    }
+    
+    public void getSize(){
+        return this.matrix.length;
     }
     
 }
