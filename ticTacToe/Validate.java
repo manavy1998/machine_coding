@@ -25,19 +25,51 @@ public class Validate {
     }
 
     public static boolean matchRow(Symbols[][] matrix, Symbols symbol, int row) {
-        return false;
+        int size  = matrix.length;
+        
+        for (int i = 0; i < size; i++){
+            if (matrix[row][i] != symbol){
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public static boolean matchDiag(Symbols[][] matrix, Symbols symbol) {
-        return false;
+        int size  = matrix.length;
+        
+        for (int i = 0; i < size; i++){
+            if (matrix[i][i] != symbol){
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public static boolean matchCol(Symbols[][] matrix, Symbols symbol, int col) {
-        return false;
+        int size  = matrix.length;
+        
+        for (int i = 0; i < size; i++){
+            if (matrix[i][col] != symbol){
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public static boolean matchDiagRev(Symbols[][] matrix, Symbols symbol) {
-        return false;
+        int size  = matrix.length;
+        
+        for (int i = 0; i < size; i++){
+            if (matrix[i][size-i] != symbol){
+                return false;
+            }
+        }
+
+        return true;
     }
     
 }
